@@ -7,6 +7,7 @@ public enum FluidTable {
 	Hg(13.55, 0.14, -39, 357, 296),
 	CCI4(1.596, 0.84, -23, 77, 193),
 	C6H6(0.879, 1.71, 6, 80, 393);
+	
 
 	double density;
 	double heatCapacity;
