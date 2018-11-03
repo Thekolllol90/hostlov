@@ -1,6 +1,6 @@
 package läxa;
 
-public enum FluidTable {
+public enum FluidTable { //tabel med vätskor
 
 	H20(0.998, 4.19, 0, 100, 2260), 
 	H2SO4(1.84, 1.38, 10, 336, 511),

@@ -1,6 +1,6 @@
 package läxa;
 
-public enum GasTable {
+public enum GasTable { //tabel med gaser
 
 	AIR(1.29, 1.01), 
 	O2(1.43, 0.92), 
