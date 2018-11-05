@@ -56,8 +56,8 @@ public class methoder {
 	 * @param height höjden som föremålet befinner sig på
 	 * @return Energy den potensiela enegin som föremålet har
 	 */
-	public static double potentialEnergy(double mass, double height){ // kolla om rätt 
-		double Energy = mass * height * 9.82;
+	public static double potentialEnergy(double mass, double height){ 
+		double Energy = mass * height * konstanter.g_swe;
 		return Energy;
 	}
 	/**
@@ -65,8 +65,8 @@ public class methoder {
 	 * @param height höjden som föremålet befinner sig på
 	 * @return Speed föremålets hastighet
 	 */
-	public static double fallSpeed(double height){  // kolla om rätt
-		double Speed = 9.82 * height;
+	public static double fallSpeed(double height){ 
+		double Speed = Math.sqrt(2 * konstanter.g_swe * height);
 		return Speed;
 	}
 	/**
@@ -75,8 +75,8 @@ public class methoder {
 	 * @param last andra tallet 
 	 * @return skillnaden
 	 */
-	public static double delta(double first, double last){  //kolla om rätt 
-		double delta = first - last;
+	public static double delta(double first, double last){  
+		double delta = last - first;
 		return delta;
 	}
 	/**
@@ -85,7 +85,7 @@ public class methoder {
 	 * @param volume volumen som vätskan har
 	 * @return Mass massan som vätskan har
 	 */
-	public static double volumeToMass(FluidTable fluid, double volume){ //kolla om rätt
+	public static double volumeToMass(FluidTable fluid, double volume){ 
 		double Mass = volume * fluid.density;
 		return Mass;
 	}
@@ -95,7 +95,7 @@ public class methoder {
 	 * @param volume volumen som gasen har
 	 * @return Mass massan på gasen
 	 */
-	public static double volumeToMass(GasTable gas, double volume){ //kolla
+	public static double volumeToMass(GasTable gas, double volume){ 
 		double Mass = volume * gas.density;
 		return Mass;
 	}
@@ -105,7 +105,7 @@ public class methoder {
 	 * @param volume volumen som ämnet har
 	 * @return Mass massan på ämnet
 	 */
-	public static double volumeToMass(SolidTable solid, double volume){ //kolla
+	public static double volumeToMass(SolidTable solid, double volume){ 
 		double Mass = volume * solid.density;
 		return Mass;
 		}
@@ -161,23 +161,26 @@ public class methoder {
 	}
 	
 	public static double heat(SolidTable solid, double mass, double deltaT){
-		return 0;
+		double heat = solid.heatCapacity * mass * deltaT;
+		return heat;
 	}
 	
 	public static double heat(FluidTable fluid, double volume, double deltaT){
-		return 0;
+		double heat = fluid.heatCapacity * volume * deltaT;
+		return heat;
 	}
 	
 	public static double heat(GasTable gas, double volume, double deltaT){
-		return 0;
+		double heat = gas.heatCapacity * volume * deltaT;
+		return heat;
 	}
 	/**
 	 * räknar ut hur högt något kommer
 	 * @param velocity hastigheten som föremålet har
 	 * @return höjden som föremålet når
 	 */
-	public static double velocityToHeight(double velocity) {	//kolla
-		double Height = velocity / 9.82;
+	public static double velocityToHeight(double velocity) {
+		double Height = (velocity*velocity) / (2*konstanter.g_swe);
 		return Height;
 	}
 }
