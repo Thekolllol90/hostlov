@@ -278,7 +278,7 @@ public class methoder {
 		return density;
 	}
 	/**
-	 * räkanar ut antal volt 
+	 * räknar ut antal volt 
 	 * @param current strömen
 	 * @param resistance resistancen 
 	 * @return volten
@@ -287,7 +287,12 @@ public class methoder {
 	     double voltage = current * resistance;
 		 return voltage;
 	    }
-	
+	/**
+	 * räknar ut strömmen 
+	 * @param voltage antal volt
+	 * @param resistance recistencen
+	 * @return strömmen
+	 */
 	public static double  current(double voltage, double resistance) {
 		double current = voltage / resistance;
 		return current;
