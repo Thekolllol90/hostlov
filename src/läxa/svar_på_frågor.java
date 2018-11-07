@@ -41,6 +41,9 @@ public class svar_på_frågor {
 		
 		System.out.println("om en boll rör sig med hastigheten 20 km/h hur lång tid tar det för den att förflyta sig 745m");
 		System.out.println(methoder.svtTime(745, methoder.KMHtoMS(20))); //fråga 9
+		
+		System.out.println("om spänningen är 30V och resistancen är 900 - 300 vad blir strömmen");
+		System.out.println(methoder.current(30, 600));
 	}
 	
 }
