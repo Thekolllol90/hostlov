@@ -297,9 +297,4 @@ public class methoder {
 		double current = voltage / resistance;
 		return current;
 	}
-	
-	
-	
-	
-	
 }
