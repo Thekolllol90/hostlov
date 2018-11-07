@@ -159,17 +159,35 @@ public class methoder {
 		double power = work / time;
 		return power;
 	}
-	
+	/**
+	 * räknar ut energin som krävs för att värma upp ett material	
+	 * @param solid materialet man har
+	 * @param mass massan på materialet
+	 * @param deltaT skilnaden mellan temperaturerna  
+	 * @return energin som krävs
+	 */
 	public static double heat(SolidTable solid, double mass, double deltaT){
 		double heat = solid.heatCapacity * mass * deltaT;
 		return heat;
 	}
-	
+	/**
+	 * räknar ut energin som krävs för att värma upp en vätska
+	 * @param fluid vätskan man har
+	 * @param volume volymen på vätskan
+	 * @param deltaT skilnaden mellan temperaturerna  
+	 * @return energin som krävs
+	 */
 	public static double heat(FluidTable fluid, double volume, double deltaT){
 		double heat = fluid.heatCapacity * volume * deltaT;
 		return heat;
 	}
-	
+	/**
+	 * räknar ut energin som krävs för att värma upp en gas
+	 * @param gas gasen man har
+	 * @param volymen på gasen
+	 * @param deltaT skilnaden mellan temperaturerna  
+	 * @return energin som krävs
+	 */
 	public static double heat(GasTable gas, double volume, double deltaT){
 		double heat = gas.heatCapacity * volume * deltaT;
 		return heat;
@@ -182,5 +200,71 @@ public class methoder {
 	public static double velocityToHeight(double velocity) {
 		double Height = (velocity*velocity) / (2*konstanter.g_swe);
 		return Height;
+	}
+	/**
+	 * räknar ut kraften vid acceleration
+	 * @param mass massan på föremålet
+	 * @param acceleration accelerationen hos föremålet
+	 * @return force kraften 
+	 */
+	public static double FMAforce(double mass, double acceleration) { //1
+		double force = mass * acceleration;
+		return force;
+	}
+	/**
+	 * räknar ut massan 
+	 * @param force kraften
+	 * @param acceleration accelerationen hos föremålet
+	 * @return mass massan på föremålet
+	 */
+	public static double FMAmass(double force, double acceleration) { //2
+		double mass = force / acceleration; 
+		return mass;
+	}
+	/**
+	 * räknar ut accelerationen hos ett föremål
+	 * @param mass massan på föremålet	
+	 * @param force kraften	
+	 * @return acceleration accelerationen på föremålet
+	 */
+	public static double FMAacceleration(double mass, double force) { //3
+		double acceleration = force / mass;
+		return acceleration;
+	}
+	/**
+	 * räknar ut volymen på en kub 
+	 * @param lenght längden på en sida
+	 * @return volumen på kuben
+	 */
+	public static double volume(double lenght) { //4
+		double volume = Math.pow(lenght,3); 
+		return volume;
+	}
+	/**
+	 * gör om km/h till m/s
+	 * @param KMH km/h
+	 * @return m/s
+	 */
+	public static double KMHtoMS(double KMH){ //5
+		double MS = KMH / 3.6;
+		return MS;
+	}
+	/**
+	 * gör om m/s till km/h
+	 * @param MS m/s
+	 * @return km/h
+	 */
+	public static double MStoKMH(double MS){ //6
+		double KMH = MS * 3.6;
+		return KMH;
+	}
+	/**
+	 * gör om mp/h till km/H
+	 * @param MPH mp/h
+	 * @return km/h
+	 */
+	public static double MPHtoKMH(double MPH) { //7
+		double KMH = MPH * 1.609; 
+		return KMH;
 	}
 }

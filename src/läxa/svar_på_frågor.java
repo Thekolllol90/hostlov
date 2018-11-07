@@ -22,15 +22,7 @@ public class svar_på_frågor {
 		System.out.println(Math.pow(Math.sin(90), 2) * methoder.velocityToHeight(50/3.6) + 1.8); //fråga 5
 		
 		System.out.println("740kg 0-100 4,4s");
-		double mass = 740;
-        double time = 4.4;
-        double velocity = 100 / 3.6;
-        double acc = velocity / 4.4;
-        double force = mass * acc;
-        double work = methoder.work(force, methoder.svtDistance(velocity, time));
-        double power = methoder.power(work, time);
-        double result = power;
-		System.out.println(result); //fråga 6
+		System.out.println(methoder.power(methoder.delta(methoder.kineticEnergy(740, 0),methoder.kineticEnergy(740, (100/3.6))), 4.4)); //fråga 6
 		
 		System.out.println("10m boll");
 		double y = 10.0;
@@ -40,11 +32,17 @@ public class svar_på_frågor {
             y = y * 0.99;
             i++;
         }
-
-        result = (double)i; 
+        double result = 0;
+        result = i; 
 		
 		
-		System.out.println(result);
+		System.out.println(result); //fråga 7
 		
+		System.out.println("om en silver kub med längden 7cm accelererar med 7.5 m/s hur stor blir kraften");
+		System.out.println(methoder.FMAforce(methoder.volumeToMass(SolidTable.silver, methoder.volume(7)), 7.5)); //fråga 8
+		
+		System.out.println("om en bol rör sig med hastigheten 20 km/h hur lång tid tar det för den att förflyta sig 745m");
+		System.out.println(methoder.svtTime(745, methoder.KMHtoMS(20)));
 	}
+	
 }
