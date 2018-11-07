@@ -1,7 +1,5 @@
 package läxa;
 
-import java.lang.reflect.Method;
-
 import läxa.methoder;
 
 public class svar_på_frågor {
@@ -41,8 +39,8 @@ public class svar_på_frågor {
 		System.out.println("om en silver kub med längden 7cm accelererar med 7.5 m/s hur stor blir kraften");
 		System.out.println(methoder.FMAforce(methoder.volumeToMass(SolidTable.silver, methoder.volume(7)), 7.5)); //fråga 8
 		
-		System.out.println("om en bol rör sig med hastigheten 20 km/h hur lång tid tar det för den att förflyta sig 745m");
-		System.out.println(methoder.svtTime(745, methoder.KMHtoMS(20)));
+		System.out.println("om en boll rör sig med hastigheten 20 km/h hur lång tid tar det för den att förflyta sig 745m");
+		System.out.println(methoder.svtTime(745, methoder.KMHtoMS(20))); //fråga 9
 	}
 	
 }

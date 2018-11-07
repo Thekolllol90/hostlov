@@ -267,4 +267,34 @@ public class methoder {
 		double KMH = MPH * 1.609; 
 		return KMH;
 	}
+	/**
+	 * räknar ut densiteten hos ett material
+	 * @param mass massan på föremålet
+	 * @param volume volymen av materialet
+	 * @return densiteten på materialet
+	 */
+	public static double density(double mass, double volume) { //8
+		double density = mass / volume;
+		return density;
+	}
+	/**
+	 * räkanar ut antal volt 
+	 * @param current strömen
+	 * @param resistance resistancen 
+	 * @return volten
+	 */
+	 public static double voltage(double current, double resistance) { //9
+	     double voltage = current * resistance;
+		 return voltage;
+	    }
+	
+	public static double  current(double voltage, double resistance) {
+		double current = voltage / resistance;
+		return current;
+	}
+	
+	
+	
+	
+	
 }
