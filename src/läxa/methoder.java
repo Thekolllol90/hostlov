@@ -297,4 +297,47 @@ public class methoder {
 		double current = voltage / resistance;
 		return current;
 	}
+	/**
+	 * räknar ut effecten på en bil motor
+	 * @param mass bilens massa
+	 * @param velocityStart start hastighet
+	 * @param velocityEnd slut hastighet
+	 * @param time tiden som bilen accelererar
+	 * @return effecten på bilen
+	 */
+	public static double CarEffect(double mass, double velocityStart, double velocityEnd, double time) {
+		double ti = time;
+		double ms1 = velocityStart / 3.6; 
+		double ms2 = velocityEnd / 3.6;
+		double ma = mass;
+		double kin1 = kineticEnergy(ma, ms1);
+		double kin2 = kineticEnergy(ma, ms2);
+		double del = delta(kin1, kin2);
+		double pow = power(del, ti);
+		return pow;
+	}
+	/**
+	 * räknar ut hur många gånger en boll stutsar
+	 * @param height höjden som bollen slåpps ifrån
+	 * @param energyLoss mängden procent energi som bollen tappar varje studs i decimal form
+	 * @param minHeight höjden som bollen inte får stutsa under
+	 * @return hur många gånger bollen studsar
+	 */
+	public static double Bounce(double height, double energyLoss, double minHeight) {
+		double loss = 1.0 - energyLoss;
+		double i = 0;
+		while (height > minHeight) {
+			height = height * loss;
+			i++;
+		}
+		double res = i;
+		return res;
+	}
+	
+	
+	
+	
+	
+	
+	
 }
